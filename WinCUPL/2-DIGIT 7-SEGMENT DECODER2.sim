@@ -1,0 +1,146 @@
+%SIGNAL
+PIN   1 =  CLK 
+PIN   2 =  hex_in_a_0_ 
+PIN   3 =  hex_in_a_1_ 
+PIN   4 =  hex_in_a_2_ 
+PIN   5 =  hex_in_a_3_ 
+PIN   6 =  hex_in_b_0_ 
+PIN   7 =  hex_in_b_1_ 
+PIN   8 =  hex_in_b_2_ 
+PIN   9 =  hex_in_b_3_ 
+PIN  22 =  n1 
+PIN  23 =  n2 
+PIN  14 =  seg_a_out 
+PIN  15 =  seg_b_out 
+PIN  16 =  seg_c_out 
+PIN  17 =  seg_d_out 
+PIN  21 =  seg_dp_out 
+PIN  18 =  seg_e_out 
+PIN  19 =  seg_f_out 
+PIN  20 =  seg_g_out 
+%END
+
+%FIELD
+%END
+
+%EQUATION
+n1.d  =>
+    n1
+
+n1.ar  =>
+    0 
+
+n1.sp  =>
+    0 
+
+n2 =>
+    n1
+
+seg_a_out =>
+    hex_in_b_0_ & hex_in_b_1_ & !hex_in_b_2_ & hex_in_b_3_ & !n1
+  # hex_in_a_0_ & hex_in_a_1_ & !hex_in_a_2_ & hex_in_a_3_ & n1
+  # !hex_in_b_0_ & !hex_in_b_1_ & hex_in_b_2_ & !hex_in_b_3_ & !n1
+  # hex_in_b_0_ & !hex_in_b_1_ & !hex_in_b_2_ & !hex_in_b_3_ & !n1
+  # !hex_in_a_0_ & !hex_in_a_1_ & hex_in_a_2_ & !hex_in_a_3_ & n1
+  # hex_in_b_0_ & !hex_in_b_1_ & hex_in_b_2_ & hex_in_b_3_ & !n1
+  # hex_in_a_0_ & !hex_in_a_1_ & !hex_in_a_2_ & !hex_in_a_3_ & n1
+  # hex_in_a_0_ & !hex_in_a_1_ & hex_in_a_2_ & hex_in_a_3_ & n1
+
+seg_b_out =>
+    !hex_in_b_0_ & !hex_in_b_1_ & hex_in_b_2_ & hex_in_b_3_ & !n1
+  # hex_in_b_0_ & hex_in_b_1_ & !hex_in_b_2_ & hex_in_b_3_ & !n1
+  # !hex_in_a_0_ & !hex_in_a_1_ & hex_in_a_2_ & hex_in_a_3_ & n1
+  # hex_in_a_0_ & hex_in_a_1_ & !hex_in_a_2_ & hex_in_a_3_ & n1
+  # hex_in_b_0_ & !hex_in_b_1_ & hex_in_b_2_ & !hex_in_b_3_ & !n1
+  # hex_in_a_0_ & !hex_in_a_1_ & hex_in_a_2_ & !hex_in_a_3_ & n1
+  # hex_in_b_1_ & hex_in_b_2_ & hex_in_b_3_ & !n1
+  # !hex_in_b_0_ & hex_in_b_1_ & hex_in_b_2_ & !n1
+  # hex_in_a_1_ & hex_in_a_2_ & hex_in_a_3_ & n1
+  # !hex_in_a_0_ & hex_in_a_1_ & hex_in_a_2_ & n1
+
+seg_c_out =>
+    !hex_in_b_0_ & hex_in_b_1_ & !hex_in_b_2_ & !hex_in_b_3_ & !n1
+  # !hex_in_a_0_ & hex_in_a_1_ & !hex_in_a_2_ & !hex_in_a_3_ & n1
+  # !hex_in_b_0_ & !hex_in_b_1_ & hex_in_b_2_ & hex_in_b_3_ & !n1
+  # !hex_in_a_0_ & !hex_in_a_1_ & hex_in_a_2_ & hex_in_a_3_ & n1
+  # hex_in_b_1_ & hex_in_b_2_ & hex_in_b_3_ & !n1
+  # hex_in_a_1_ & hex_in_a_2_ & hex_in_a_3_ & n1
+
+seg_d_out =>
+    hex_in_a_0_ & hex_in_a_1_ & hex_in_a_2_ & hex_in_a_3_ & n1
+  # hex_in_b_0_ & hex_in_b_1_ & hex_in_b_2_ & hex_in_b_3_ & !n1
+  # !hex_in_b_0_ & hex_in_b_1_ & !hex_in_b_2_ & hex_in_b_3_ & !n1
+  # !hex_in_a_0_ & hex_in_a_1_ & !hex_in_a_2_ & hex_in_a_3_ & n1
+  # !hex_in_b_0_ & !hex_in_b_1_ & hex_in_b_2_ & !hex_in_b_3_ & !n1
+  # !hex_in_a_0_ & !hex_in_a_1_ & hex_in_a_2_ & !hex_in_a_3_ & n1
+  # hex_in_b_0_ & hex_in_b_1_ & hex_in_b_2_ & !hex_in_b_3_ & !n1
+  # hex_in_a_0_ & hex_in_a_1_ & hex_in_a_2_ & !hex_in_a_3_ & n1
+  # hex_in_b_0_ & !hex_in_b_1_ & !hex_in_b_2_ & !n1
+  # hex_in_a_0_ & !hex_in_a_1_ & !hex_in_a_2_ & n1
+
+seg_dp_out =>
+    0 
+
+seg_e_out =>
+    hex_in_a_0_ & hex_in_a_1_ & !hex_in_a_2_ & !hex_in_a_3_ & n1
+  # hex_in_b_0_ & hex_in_b_1_ & !hex_in_b_2_ & !hex_in_b_3_ & !n1
+  # !hex_in_b_0_ & !hex_in_b_1_ & hex_in_b_2_ & !hex_in_b_3_ & !n1
+  # !hex_in_a_0_ & !hex_in_a_1_ & hex_in_a_2_ & !hex_in_a_3_ & n1
+  # hex_in_b_0_ & hex_in_b_1_ & hex_in_b_2_ & !hex_in_b_3_ & !n1
+  # hex_in_a_0_ & hex_in_a_1_ & hex_in_a_2_ & !hex_in_a_3_ & n1
+  # hex_in_b_0_ & !hex_in_b_1_ & hex_in_b_2_ & !hex_in_b_3_ & !n1
+  # hex_in_a_0_ & !hex_in_a_1_ & hex_in_a_2_ & !hex_in_a_3_ & n1
+  # hex_in_b_0_ & !hex_in_b_1_ & !hex_in_b_2_ & !n1
+  # hex_in_a_0_ & !hex_in_a_1_ & !hex_in_a_2_ & n1
+
+seg_f_out =>
+    hex_in_a_0_ & hex_in_a_1_ & !hex_in_a_2_ & !hex_in_a_3_ & n1
+  # hex_in_b_0_ & hex_in_b_1_ & !hex_in_b_2_ & !hex_in_b_3_ & !n1
+  # !hex_in_b_0_ & hex_in_b_1_ & !hex_in_b_2_ & !hex_in_b_3_ & !n1
+  # !hex_in_a_0_ & hex_in_a_1_ & !hex_in_a_2_ & !hex_in_a_3_ & n1
+  # hex_in_b_0_ & !hex_in_b_1_ & !hex_in_b_2_ & !hex_in_b_3_ & !n1
+  # hex_in_b_0_ & !hex_in_b_1_ & hex_in_b_2_ & hex_in_b_3_ & !n1
+  # hex_in_b_0_ & hex_in_b_1_ & hex_in_b_2_ & !hex_in_b_3_ & !n1
+  # hex_in_a_0_ & !hex_in_a_1_ & !hex_in_a_2_ & !hex_in_a_3_ & n1
+  # hex_in_a_0_ & !hex_in_a_1_ & hex_in_a_2_ & hex_in_a_3_ & n1
+  # hex_in_a_0_ & hex_in_a_1_ & hex_in_a_2_ & !hex_in_a_3_ & n1
+
+seg_g_out =>
+    !hex_in_b_0_ & !hex_in_b_1_ & hex_in_b_2_ & hex_in_b_3_ & !n1
+  # !hex_in_a_0_ & !hex_in_a_1_ & hex_in_a_2_ & hex_in_a_3_ & n1
+  # hex_in_b_0_ & hex_in_b_1_ & hex_in_b_2_ & !hex_in_b_3_ & !n1
+  # hex_in_a_0_ & hex_in_a_1_ & hex_in_a_2_ & !hex_in_a_3_ & n1
+  # !hex_in_b_1_ & !hex_in_b_2_ & !hex_in_b_3_ & !n1
+  # !hex_in_a_1_ & !hex_in_a_2_ & !hex_in_a_3_ & n1
+
+n1.oe  =>
+    1 
+
+n2.oe  =>
+    1 
+
+seg_a_out.oe  =>
+    1 
+
+seg_b_out.oe  =>
+    1 
+
+seg_c_out.oe  =>
+    1 
+
+seg_d_out.oe  =>
+    1 
+
+seg_dp_out.oe  =>
+    1 
+
+seg_e_out.oe  =>
+    1 
+
+seg_f_out.oe  =>
+    1 
+
+seg_g_out.oe  =>
+    1 
+
+%END

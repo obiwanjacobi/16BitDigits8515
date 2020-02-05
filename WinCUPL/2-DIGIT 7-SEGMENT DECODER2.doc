@@ -1,0 +1,188 @@
+
+*******************************************************************************
+                                    2-Digit
+*******************************************************************************
+
+CUPL(WM)        5.0a Serial# 60008009
+Device          g22v10  Library DLIB-h-40-1
+Created         Fri Dec 20 17:02:16 2019
+Name            2-Digit 7-Segment Decoder
+Partno          2D7SDecoder-01
+Revision        01
+Date            18-12-2019
+Designer        Marc Jacobi
+Company         Canned Bytes
+Assembly        unknown
+Location        unknown
+
+===============================================================================
+                            Expanded Product Terms
+===============================================================================
+
+n1.d  =>
+    !n1
+
+n1.ar  =>
+    0 
+
+n1.sp  =>
+    0 
+
+n2 =>
+    !n1
+
+seg_a_out =>
+    hex_in_b_0_ & hex_in_b_1_ & !hex_in_b_2_ & hex_in_b_3_ & n1
+  # hex_in_a_0_ & hex_in_a_1_ & !hex_in_a_2_ & hex_in_a_3_ & !n1
+  # !hex_in_b_0_ & !hex_in_b_1_ & hex_in_b_2_ & !hex_in_b_3_ & n1
+  # hex_in_b_0_ & !hex_in_b_1_ & !hex_in_b_2_ & !hex_in_b_3_ & n1
+  # !hex_in_a_0_ & !hex_in_a_1_ & hex_in_a_2_ & !hex_in_a_3_ & !n1
+  # hex_in_b_0_ & !hex_in_b_1_ & hex_in_b_2_ & hex_in_b_3_ & n1
+  # hex_in_a_0_ & !hex_in_a_1_ & !hex_in_a_2_ & !hex_in_a_3_ & !n1
+  # hex_in_a_0_ & !hex_in_a_1_ & hex_in_a_2_ & hex_in_a_3_ & !n1
+
+seg_b_out =>
+    !hex_in_b_0_ & !hex_in_b_1_ & hex_in_b_2_ & hex_in_b_3_ & n1
+  # hex_in_b_0_ & hex_in_b_1_ & !hex_in_b_2_ & hex_in_b_3_ & n1
+  # !hex_in_a_0_ & !hex_in_a_1_ & hex_in_a_2_ & hex_in_a_3_ & !n1
+  # hex_in_a_0_ & hex_in_a_1_ & !hex_in_a_2_ & hex_in_a_3_ & !n1
+  # hex_in_b_0_ & !hex_in_b_1_ & hex_in_b_2_ & !hex_in_b_3_ & n1
+  # hex_in_a_0_ & !hex_in_a_1_ & hex_in_a_2_ & !hex_in_a_3_ & !n1
+  # hex_in_b_1_ & hex_in_b_2_ & hex_in_b_3_ & n1
+  # !hex_in_b_0_ & hex_in_b_1_ & hex_in_b_2_ & n1
+  # hex_in_a_1_ & hex_in_a_2_ & hex_in_a_3_ & !n1
+  # !hex_in_a_0_ & hex_in_a_1_ & hex_in_a_2_ & !n1
+
+seg_c_out =>
+    !hex_in_b_0_ & hex_in_b_1_ & !hex_in_b_2_ & !hex_in_b_3_ & n1
+  # !hex_in_a_0_ & hex_in_a_1_ & !hex_in_a_2_ & !hex_in_a_3_ & !n1
+  # !hex_in_b_0_ & !hex_in_b_1_ & hex_in_b_2_ & hex_in_b_3_ & n1
+  # !hex_in_a_0_ & !hex_in_a_1_ & hex_in_a_2_ & hex_in_a_3_ & !n1
+  # hex_in_b_1_ & hex_in_b_2_ & hex_in_b_3_ & n1
+  # hex_in_a_1_ & hex_in_a_2_ & hex_in_a_3_ & !n1
+
+seg_d_out =>
+    hex_in_a_0_ & hex_in_a_1_ & hex_in_a_2_ & hex_in_a_3_ & !n1
+  # hex_in_b_0_ & hex_in_b_1_ & hex_in_b_2_ & hex_in_b_3_ & n1
+  # !hex_in_b_0_ & hex_in_b_1_ & !hex_in_b_2_ & hex_in_b_3_ & n1
+  # !hex_in_a_0_ & hex_in_a_1_ & !hex_in_a_2_ & hex_in_a_3_ & !n1
+  # !hex_in_b_0_ & !hex_in_b_1_ & hex_in_b_2_ & !hex_in_b_3_ & n1
+  # !hex_in_a_0_ & !hex_in_a_1_ & hex_in_a_2_ & !hex_in_a_3_ & !n1
+  # hex_in_b_0_ & hex_in_b_1_ & hex_in_b_2_ & !hex_in_b_3_ & n1
+  # hex_in_a_0_ & hex_in_a_1_ & hex_in_a_2_ & !hex_in_a_3_ & !n1
+  # hex_in_b_0_ & !hex_in_b_1_ & !hex_in_b_2_ & n1
+  # hex_in_a_0_ & !hex_in_a_1_ & !hex_in_a_2_ & !n1
+
+seg_dp_out =>
+    0 
+
+seg_e_out =>
+    hex_in_a_0_ & hex_in_a_1_ & !hex_in_a_2_ & !hex_in_a_3_ & !n1
+  # hex_in_b_0_ & hex_in_b_1_ & !hex_in_b_2_ & !hex_in_b_3_ & n1
+  # !hex_in_b_0_ & !hex_in_b_1_ & hex_in_b_2_ & !hex_in_b_3_ & n1
+  # !hex_in_a_0_ & !hex_in_a_1_ & hex_in_a_2_ & !hex_in_a_3_ & !n1
+  # hex_in_b_0_ & hex_in_b_1_ & hex_in_b_2_ & !hex_in_b_3_ & n1
+  # hex_in_a_0_ & hex_in_a_1_ & hex_in_a_2_ & !hex_in_a_3_ & !n1
+  # hex_in_b_0_ & !hex_in_b_1_ & hex_in_b_2_ & !hex_in_b_3_ & n1
+  # hex_in_a_0_ & !hex_in_a_1_ & hex_in_a_2_ & !hex_in_a_3_ & !n1
+  # hex_in_b_0_ & !hex_in_b_1_ & !hex_in_b_2_ & n1
+  # hex_in_a_0_ & !hex_in_a_1_ & !hex_in_a_2_ & !n1
+
+seg_f_out =>
+    hex_in_a_0_ & hex_in_a_1_ & !hex_in_a_2_ & !hex_in_a_3_ & !n1
+  # hex_in_b_0_ & hex_in_b_1_ & !hex_in_b_2_ & !hex_in_b_3_ & n1
+  # !hex_in_b_0_ & hex_in_b_1_ & !hex_in_b_2_ & !hex_in_b_3_ & n1
+  # !hex_in_a_0_ & hex_in_a_1_ & !hex_in_a_2_ & !hex_in_a_3_ & !n1
+  # hex_in_b_0_ & !hex_in_b_1_ & !hex_in_b_2_ & !hex_in_b_3_ & n1
+  # hex_in_b_0_ & !hex_in_b_1_ & hex_in_b_2_ & hex_in_b_3_ & n1
+  # hex_in_b_0_ & hex_in_b_1_ & hex_in_b_2_ & !hex_in_b_3_ & n1
+  # hex_in_a_0_ & !hex_in_a_1_ & !hex_in_a_2_ & !hex_in_a_3_ & !n1
+  # hex_in_a_0_ & !hex_in_a_1_ & hex_in_a_2_ & hex_in_a_3_ & !n1
+  # hex_in_a_0_ & hex_in_a_1_ & hex_in_a_2_ & !hex_in_a_3_ & !n1
+
+seg_g_out =>
+    !hex_in_b_0_ & !hex_in_b_1_ & hex_in_b_2_ & hex_in_b_3_ & n1
+  # !hex_in_a_0_ & !hex_in_a_1_ & hex_in_a_2_ & hex_in_a_3_ & !n1
+  # hex_in_b_0_ & hex_in_b_1_ & hex_in_b_2_ & !hex_in_b_3_ & n1
+  # hex_in_a_0_ & hex_in_a_1_ & hex_in_a_2_ & !hex_in_a_3_ & !n1
+  # !hex_in_b_1_ & !hex_in_b_2_ & !hex_in_b_3_ & n1
+  # !hex_in_a_1_ & !hex_in_a_2_ & !hex_in_a_3_ & !n1
+
+n1.oe  =>
+    1 
+
+n2.oe  =>
+    1 
+
+seg_a_out.oe  =>
+    1 
+
+seg_b_out.oe  =>
+    1 
+
+seg_c_out.oe  =>
+    1 
+
+seg_d_out.oe  =>
+    1 
+
+seg_dp_out.oe  =>
+    1 
+
+seg_e_out.oe  =>
+    1 
+
+seg_f_out.oe  =>
+    1 
+
+seg_g_out.oe  =>
+    1 
+
+
+===============================================================================
+                                 Symbol Table
+===============================================================================
+
+Pin Variable                                    Pterms   Max     Min    
+Pol   Name              Ext     Pin     Type     Used   Pterms  Level   
+--- --------            ---     ---     ----    ------  ------  -----   
+
+    CLK                         1        V        -       -       -     
+    hex_in_a_0_                 2        V        -       -       -     
+    hex_in_a_1_                 3        V        -       -       -     
+    hex_in_a_2_                 4        V        -       -       -     
+    hex_in_a_3_                 5        V        -       -       -     
+    hex_in_b_0_                 6        V        -       -       -     
+    hex_in_b_1_                 7        V        -       -       -     
+    hex_in_b_2_                 8        V        -       -       -     
+    hex_in_b_3_                 9        V        -       -       -     
+    n1                          22       V        -       -       -     
+    n1                  d       22       X        1       10      4     
+    n1                  ar      22       X        1       1       1     
+    n1                  sp      22       X        1       1       1     
+    n2                          23       V        1       8       4     
+    seg_a_out                   14       V        8       8       4     
+    seg_b_out                   15       V        10      10      4     
+    seg_c_out                   16       V        6       12      4     
+    seg_d_out                   17       V        10      14      4     
+    seg_dp_out                  21       V        1       12      4     
+    seg_e_out                   18       V        10      16      4     
+    seg_f_out                   19       V        10      16      4     
+    seg_g_out                   20       V        6       14      4     
+    n1                  oe      22       D        1       1       0     
+    n2                  oe      23       D        1       1       0     
+    seg_a_out           oe      14       D        1       1       0     
+    seg_b_out           oe      15       D        1       1       0     
+    seg_c_out           oe      16       D        1       1       0     
+    seg_d_out           oe      17       D        1       1       0     
+    seg_dp_out          oe      21       D        1       1       0     
+    seg_e_out           oe      18       D        1       1       0     
+    seg_f_out           oe      19       D        1       1       0     
+    seg_g_out           oe      20       D        1       1       0     
+
+
+LEGEND    D : default variable         F : field      G : group
+          I : intermediate variable    N : node       M : extended node
+          U : undefined                V : variable   X : extended variable
+          T : function
+

@@ -1,0 +1,71 @@
+Name     2-Digit 7-Segment Decoder;
+PartNo   2D7SDecoder-01;
+Date     18-12-2019;
+Revision 01;
+Designer Marc Jacobi;
+Company  Canned Bytes;
+Assembly unknown;
+Location unknown;
+Device   g22v10;
+/*Format   j ;*/
+
+
+/** input pins **/
+
+PIN 1 = CLK;
+PIN 2 = D0;
+PIN 3 = D1;
+PIN 4 = D2;
+PIN 5 = D3;
+PIN 6 = D4;
+PIN 7 = D5;
+PIN 8 = D6;
+PIN 9 = D7;
+
+/** output pins **/
+
+PIN 14 = a;
+PIN 15 = b;
+PIN 16 = c;
+PIN 17 = d;
+PIN 18 = e;
+PIN 19 = f;
+PIN 20 = g;
+PIN 21 = dp;
+PIN 22 = n1;
+PIN 23 = n2;
+
+/* not used */
+n1.ar = 'b'0;
+n1.sp = 'b'0;
+
+n1.d = !n1;
+n2 = !n1;
+
+dec0 = (D0 & n1) # (D4 & !n1);
+dec1 = (D1 & n1) # (D5 & !n1);
+dec2 = (D2 & n1) # (D6 & !n1);
+dec3 = (D3 & n1) # (D7 & !n1);
+
+FIELD decode = [dec3, dec2, dec1, dec0];
+FIELD output = [dp, g, f, e, d, c, b, a];
+
+TABLE decode => output 
+{
+	0 => 'b'00111111;
+	1 => 'b'00000110;
+	2 => 'b'01011011;
+	3 => 'b'01001111;
+	4 => 'b'01100110;
+	5 => 'b'01101101;
+	6 => 'b'01111101;
+	7 => 'b'00000111;
+	8 => 'b'01111111;
+	9 => 'b'01101111;
+	A => 'b'11110111;
+	B => 'b'11111100;
+	C => 'b'10111001;
+	D => 'b'11011110;
+	E => 'b'11111011;
+	F => 'b'11110001;
+}

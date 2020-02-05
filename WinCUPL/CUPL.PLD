@@ -1,0 +1,35 @@
+Name     7segHex.tru ;
+PartNo   00 ;
+Date     17.12.2019 ;
+Revision 01 ;
+Designer Marc ;
+Company  unknown ;
+Assembly None ;
+Location unknown ;
+Device   g16v8a ;
+
+/* inputs */
+PIN 2 = b0;
+PIN 3 = b1;
+PIN 4 = b2;
+PIN 5 = b3;
+
+/* outputs */
+PIN 12 = a;
+PIN 13 = b;
+PIN 14 = c;
+PIN 15 = d;
+PIN 16 = e;
+PIN 17 = f;
+PIN 18 = g;
+PIN 19 = dp;
+
+/* combinatorial logic */
+a = (!b0 & b2) # (!b0 & b1 & b3) # (b0 & !b1 & !b2) # (b0 & !b3) # (!b1 & !b3) # (b1 & b2);
+b = (!b0 & !b2 & !b3) # (!b0 & b2 & b3) # (b0 & !b2 & b3) # (!b1 & !b3) # (!b1 & !b2);
+c = (!b0 & b1) # (b0 & !b1) # (!b1 & b3) # (!b1 & !b2) # (!b2 & b3);
+d = (!b0 & !b1 & !b3) # (b0 & !b2) # (b1 & !b2 & b3) # (!b1 & b2 & b3) # (b1 & b2 & !b3);
+dp = 'b'0;
+e = (b0 & b1) # (!b1 & !b3) # (!b1 & b2) # (b2 & !b3);
+f = (!b0 & b1 & !b2) # (b0 & !b1) # (b0 & b2) # (b1 & !b3) # (!b2 & !b3);
+g = (b0 & !b1) # (!b0 & b1 & !b2) # (b0 & b3) # (!b1 & b2) # (b2 & !b3);

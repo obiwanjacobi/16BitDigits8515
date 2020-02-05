@@ -1,0 +1,104 @@
+Name     2-Digit 7-Segment Decoder;
+PartNo   2D7SDecoder-01;
+Date     18-12-2019;
+Revision 01;
+Designer Marc Jacobi;
+Company  Canned Bytes;
+Assembly unknown;
+Location unknown;
+Device   g22v10;
+/*Format   j ;*/
+
+
+/** input pins **/
+
+PIN 1 = CLK;
+PIN 2 = a0;
+PIN 3 = a1;
+PIN 4 = a2;
+PIN 5 = a3;
+PIN 6 = b0;
+PIN 7 = b1;
+PIN 8 = b2;
+PIN 9 = b3;
+//PIN 10 = 
+//PIN 11 = 
+
+/** output pins **/
+
+PIN 14 = segA;
+PIN 15 = segB;
+PIN 16 = segC;
+PIN 17 = segD;
+PIN 18 = segE;
+PIN 19 = segF;
+PIN 20 = segG;
+PIN 21 = segDP;
+PIN 22 = n1;
+PIN 23 = n2;
+
+/* not used */
+n1.ar = 'b'0;
+n1.sp = 'b'0;
+
+n1.d = !n1;
+n2 = !n1;
+
+segA     = !(   !n1 &  a3 & !a2 &  a1 &  a0 
+            #   !n1 &  a3 &  a2 & !a1 &  a0 
+            #   !n1 & !a3 & !a2 & !a1 &  a0 
+            #   !n1 & !a3 &  a2 & !a1 & !a0 
+            #    n1 &  b3 & !b2 &  b1 &  b0 
+            #    n1 &  b3 &  b2 & !b1 &  b0 
+            #    n1 & !b3 & !b2 & !b1 &  b0 
+            #    n1 & !b3 &  b2 & !b1 & !b0 );
+
+segB     = !(   !n1 &  a3 &  a2 &       !a0 
+            #   !n1 &  a3 &        a1 &  a0 
+            #   !n1 & !a3 &  a2 & !a1 &  a0 
+            #   !n1 &        a2 &  a1 & !a0 
+            #    n1 &  b3 &  b2 &       !b0
+            #    n1 &  b3 &        b1 &  b0 
+            #    n1 & !b3 &  b2 & !b1 &  b0 
+            #    n1 &        b2 &  b1 & !b0 ); 
+
+segC     = !(   !n1 &  a3 &  a2 &       !a0 
+            #   !n1 &  a3 &  a2 &  a1 
+            #   !n1 & !a3 & !a2 &  a1 & !a0 
+            #    n1 &  b3 &  b2 &       !b0 
+            #    n1 &  b3 &  b2 &  b1 
+            #    n1 & !b3 & !b2 &  b1 & !b0 );
+
+segD     = !(   !n1 &        a2 &  a1 &  a0 
+            #   !n1 &       !a2 & !a1 &  a0 
+            #   !n1 &  a3 & !a2 &  a1 & !a0 
+            #   !n1 & !a3 &  a2 & !a1 & !a0 
+            #    n1 &        b2 &  b1 &  b0 
+            #    n1 &       !b2 & !b1 &  b0 
+            #    n1 &  b3 & !b2 &  b1 & !b0 
+            #    n1 & !b3 &  b2 & !b1 & !b0 );
+
+segE     = !(   !n1 & !a3 &  a2 & !a1 
+            #   !n1 & !a3 &              a0 
+            #   !n1 &       !a2 & !a1 &  a0 
+            #    n1 & !b3 &  b2 & !b1 
+            #    n1 & !b3 &              b0 
+            #    n1 &       !b2 & !b1 &  b0 );
+
+segF     = !(   !n1 & !a3 &        a1 &  a0 
+            #   !n1 & !a3 & !a2 &  a1 
+            #   !n1 & !a3 & !a2 &        a0 
+            #   !n1 &  a3 &  a2 & !a1 &  a0 
+            #    n1 & !b3 &        b1 &  b0 
+            #    n1 & !b3 & !b2 &  b1 
+            #    n1 & !b3 & !b2 &        b0 
+            #    n1 &  b3 &  b2 & !b1 &  b0 );
+
+segG     = !(   !n1 & !a3 & !a2 & !a1 
+            #   !n1 & !a3 &  a2 &  a1 &  a0 
+            #   !n1 &  a3 &  a2 & !a1 & !a0 
+            #    n1 & !b3 & !b2 & !b1 
+            #    n1 & !b3 &  b2 &  b1 &  b0 
+            #    n1 &  b3 &  b2 & !b1 & !b0 );
+
+segDP = 'b'0;

@@ -1,0 +1,201 @@
+{COMPONENT C:\DOCUMENTS AND SETTINGS\MARC\MY DOCUMENTS\WINCUPL PROJECTS\7-SEG DECODER\2-DIGIT 7-SEGMENT DECODER2.SYM
+
+ {ENVIRONMENT
+  {PDIFvrev 3.00}
+  {Program "CUPL(WM) Version 5.0a"}
+  {DBtype "Schematic"}
+  {DBvrev 1.01}
+  {DBtime "Fri Dec 20 17:02:16 2019 "}
+  {DBunit "MIL"}
+  {DBgrid 10}
+  {Lyrstr "WIRES" 1 "BUS" 1 "GATE" 2 "IEEE" 2 "PINFUN" 3 "PINNUM" 1 
+          "PINNAM" 6 "PINCON" 4 "REFDES" 2 "ATTR" 6 "SDOT" 1 
+          "DEVICE" 5 "OUTLIN" 5 "ATTR2" 6 "NOTES" 6 "NETNAM" 4 
+          "CMPNAM" 5 "BORDER" 5}
+ }
+
+ {USER
+  {VIEW
+   {Mode SYMB}
+   {Nlst OPEN}
+   {Vw 0 0 2}
+   {Lv 12 2 2 2 0 0 2 2 2 2 0 0 2 1 2 0 0 0 0}
+   {Gs 10 10}
+  }
+ }
+
+ {DISPLAY
+  [Ly "PINNUM"]
+  [Ls "SOLID"][Wd 0]
+  [Ts 15][Tj "LC"][Tr 0][Tm "N"]
+ }
+
+ {SYMBOL
+  {PIN_DEF
+   [Ly "PINCON"]
+   {P CLK {Pt "INPUT"}{Lq 0}{Ploc 100 200}}
+   {P HEX_IN_A {Pt "INPUT"}{Lq 0}{Ploc 100 160}}
+   {P HEX_IN_A {Pt "INPUT"}{Lq 0}{Ploc 100 140}}
+   {P HEX_IN_A {Pt "INPUT"}{Lq 0}{Ploc 100 120}}
+   {P HEX_IN_A {Pt "INPUT"}{Lq 0}{Ploc 100 100}}
+   {P HEX_IN_B {Pt "INPUT"}{Lq 0}{Ploc 100 80}}
+   {P HEX_IN_B {Pt "INPUT"}{Lq 0}{Ploc 100 60}}
+   {P HEX_IN_B {Pt "INPUT"}{Lq 0}{Ploc 100 40}}
+   {P HEX_IN_B {Pt "INPUT"}{Lq 0}{Ploc 100 20}}
+   {P SEG_A_OU {Pt "I/O"}{Lq 0}{Ploc 360 20}}
+   {P SEG_B_OU {Pt "I/O"}{Lq 0}{Ploc 360 40}}
+   {P SEG_C_OU {Pt "I/O"}{Lq 0}{Ploc 360 60}}
+   {P SEG_D_OU {Pt "I/O"}{Lq 0}{Ploc 360 80}}
+   {P SEG_E_OU {Pt "I/O"}{Lq 0}{Ploc 360 100}}
+   {P SEG_F_OU {Pt "I/O"}{Lq 0}{Ploc 360 120}}
+   {P SEG_G_OU {Pt "I/O"}{Lq 0}{Ploc 360 140}}
+   {P SEG_DP_O {Pt "I/O"}{Lq 0}{Ploc 360 160}}
+   {P N2 {Pt "I/O"}{Lq 0}{Ploc 360 180}}
+   {P N1 {Pt "OUTPUT"}{Lq 0}{Ploc 360 200}}
+  }
+
+  {PKG
+   [Ly "REFDES"]
+   [Ts 25][Tj "CB"][Tr 0][Tm "N"]
+   {Rdl 230 230}
+
+   [Ly "PINNUM"]
+   [Ts 15][Tj "RC"]
+   {Pnl 120 210}
+   [Ts 15][Tj "RC"]
+   {Pnl 120 170}
+   {Pnl 120 150}
+   {Pnl 120 130}
+   {Pnl 120 110}
+   {Pnl 120 90}
+   {Pnl 120 70}
+   {Pnl 120 50}
+   {Pnl 120 30}
+   [Ts 15][Tj "LC"]
+   {Pnl 340 30}
+   {Pnl 340 50}
+   {Pnl 340 70}
+   {Pnl 340 90}
+   {Pnl 340 110}
+   {Pnl 340 130}
+   {Pnl 340 150}
+   {Pnl 340 170}
+   {Pnl 340 190}
+   {Pnl 340 210}
+
+   {Sd A 1 2 3 4 5 6 7 8 9 14 15 16 17 18 19 20 21 23 22}
+  }
+
+  {PIC
+   [Ly "GATE"]
+   [Ts 15][Tj "LC"][Tr 0][Tm "N"]
+   {R 130 220 330 0}
+   {L 130 200 100 200}
+   {L 130 210 140 200 130 190}
+   {L 130 160 100 160}
+   {L 130 140 100 140}
+   {L 130 120 100 120}
+   {L 130 100 100 100}
+   {L 130 80 100 80}
+   {L 130 60 100 60}
+   {L 130 40 100 40}
+   {L 130 20 100 20}
+   {L 330 20 360 20}
+   {L 330 40 360 40}
+   {L 330 60 360 60}
+   {L 330 80 360 80}
+   {L 330 100 360 100}
+   {L 330 120 360 120}
+   {L 330 140 360 140}
+   {L 330 160 360 160}
+   {L 330 180 360 180}
+   {L 330 200 360 200}
+   [Ly "PINNAM"]
+   [Tj "LC"]
+   {T "CLK" 140 200}
+   {T "HEX_IN_A" 140 160}
+   {T "HEX_IN_A" 140 140}
+   {T "HEX_IN_A" 140 120}
+   {T "HEX_IN_A" 140 100}
+   {T "HEX_IN_B" 140 80}
+   {T "HEX_IN_B" 140 60}
+   {T "HEX_IN_B" 140 40}
+   {T "HEX_IN_B" 140 20}
+   [Tj "RC"]
+   {T "SEG_A_OU" 320 20}
+   {T "SEG_B_OU" 320 40}
+   {T "SEG_C_OU" 320 60}
+   {T "SEG_D_OU" 320 80}
+   {T "SEG_E_OU" 320 100}
+   {T "SEG_F_OU" 320 120}
+   {T "SEG_G_OU" 320 140}
+   {T "SEG_DP_O" 320 160}
+   {T "N2" 320 180}
+   {T "N1" 320 200}
+   [Ly "DEVICE"]
+   [Tj "CT"]
+   {T "G22V10" 230 -10}
+  }
+
+  {ATR
+   {IN
+    {Org 100 20}
+    {Ty 255}
+   }
+   {EX
+    [Ly "ATTR2"]
+    [Ts 12][Tj "CT"][Tr 0][Tm "N"]
+    {At PLD C:\DOCUMENTS AND SETTINGS\MARC\MY DOCUMENTS\WINCUPL PROJECTS\7-SEG DECODER\2-DIGIT 7-SEGMENT DECODER2 230 220}
+   }
+  }
+ }
+
+ {DETAIL
+  {ANNOTATE
+  }
+
+  {NET_DEF
+   {N CLK
+   }
+   {N HEX_IN_A
+   }
+   {N HEX_IN_A
+   }
+   {N HEX_IN_A
+   }
+   {N HEX_IN_A
+   }
+   {N HEX_IN_B
+   }
+   {N HEX_IN_B
+   }
+   {N HEX_IN_B
+   }
+   {N HEX_IN_B
+   }
+   {N SEG_A_OU
+   }
+   {N SEG_B_OU
+   }
+   {N SEG_C_OU
+   }
+   {N SEG_D_OU
+   }
+   {N SEG_E_OU
+   }
+   {N SEG_F_OU
+   }
+   {N SEG_G_OU
+   }
+   {N SEG_DP_O
+   }
+   {N N2
+   }
+   {N N1
+   }
+  }
+
+  {SUBCOMP
+  }
+ }
+}

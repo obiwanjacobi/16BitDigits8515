@@ -1,0 +1,272 @@
+
+*******************************************************************************
+                                    2-Digit
+*******************************************************************************
+
+CUPL(WM)        5.0a Serial# 60008009
+Device          g22v10  Library DLIB-h-40-1
+Created         Wed Dec 18 14:39:11 2019
+Name            2-Digit 7-Segment Decoder
+Partno          2D7SDecoder-01
+Revision        01
+Date            18-12-2019
+Designer        Marc Jacobi
+Company         Canned Bytes
+Assembly        unknown
+Location        unknown
+
+===============================================================================
+                            Expanded Product Terms
+===============================================================================
+
+a =>
+    D4 & D5 & D6 & D7 & !n1
+  # !D4 & D7 & !n1
+  # D0 & D1 & D2 & D3 & n1
+  # !D0 & D3 & n1
+  # !D0 & !D2 & !D3 & n1
+  # !D4 & !D6 & !D7 & !n1
+  # D0 & D1 & !D3 & n1
+  # D4 & D5 & !D7 & !n1
+  # !D0 & D1 & D2 & !D3 & n1
+  # D0 & !D1 & D2 & !D3 & n1
+  # !D4 & D5 & D6 & !D7 & !n1
+  # D4 & !D5 & D6 & !D7 & !n1
+  # !D1 & !D2 & D3 & n1
+  # !D5 & !D6 & D7 & !n1
+
+b =>
+    !D4 & D5 & D7 & !n1
+  # !D0 & D1 & D3 & n1
+  # !D0 & !D1 & !D3 & n1
+  # !D2 & !D3 & n1
+  # !D4 & !D5 & !D7 & !n1
+  # !D6 & !D7 & !n1
+  # D0 & D1 & !D3 & n1
+  # D4 & D5 & !D7 & !n1
+  # D0 & !D1 & D2 & D3 & n1
+  # D4 & !D5 & D6 & D7 & !n1
+  # !D1 & !D2 & D3 & n1
+  # !D5 & !D6 & D7 & !n1
+
+c =>
+    !D4 & D5 & !D6 & D7 & !n1
+  # !D0 & D1 & !D2 & D3 & n1
+  # D0 & D1 & !D2 & n1
+  # !D1 & !D3 & n1
+  # D4 & D5 & !D6 & !n1
+  # !D5 & !D6 & !D7 & !n1
+  # !D4 & !D5 & D6 & !D7 & !n1
+  # D0 & D1 & !D3 & n1
+  # D4 & D5 & !D7 & !n1
+  # D0 & !D1 & D2 & D3 & n1
+  # !D0 & D1 & D2 & !D3 & n1
+  # D4 & !D5 & D6 & D7 & !n1
+  # !D4 & D5 & D6 & !D7 & !n1
+  # D4 & !D5 & D6 & !D7 & !n1
+  # !D1 & !D2 & D3 & n1
+  # !D5 & !D6 & D7 & !n1
+
+d =>
+    !D4 & D5 & D6 & D7 & !n1
+  # !D0 & D1 & D2 & D3 & n1
+  # !D0 & !D2 & !D3 & n1
+  # D0 & D1 & !D2 & n1
+  # !D0 & !D1 & D2 & D3 & n1
+  # !D4 & !D6 & !D7 & !n1
+  # D4 & D5 & !D6 & !n1
+  # !D4 & !D5 & D6 & D7 & !n1
+  # D0 & !D1 & D2 & D3 & n1
+  # !D0 & D1 & D2 & !D3 & n1
+  # D0 & !D1 & D2 & !D3 & n1
+  # D4 & !D5 & D6 & D7 & !n1
+  # !D4 & D5 & D6 & !D7 & !n1
+  # D4 & !D5 & D6 & !D7 & !n1
+  # !D1 & !D2 & D3 & n1
+  # !D5 & !D6 & D7 & !n1
+
+dec0 =>
+    D0 & n1
+  # D4 & !n1
+
+dec1 =>
+    D1 & n1
+  # D5 & !n1
+
+dec2 =>
+    D2 & n1
+  # D6 & !n1
+
+dec3 =>
+    D3 & n1
+  # D7 & !n1
+
+decode =>
+    dec3 , dec2 , dec1 , dec0
+
+dp =>
+    D5 & D7 & !n1
+  # D1 & D3 & n1
+  # !D0 & !D1 & D2 & D3 & n1
+  # !D4 & !D5 & D6 & D7 & !n1
+  # D0 & !D1 & D2 & D3 & n1
+  # D4 & !D5 & D6 & D7 & !n1
+
+e =>
+    D5 & D7 & !n1
+  # !D4 & D7 & !n1
+  # D1 & D3 & n1
+  # !D0 & D3 & n1
+  # !D0 & !D2 & !D3 & n1
+  # !D4 & !D6 & !D7 & !n1
+  # D0 & !D1 & D2 & D3 & n1
+  # !D0 & D1 & D2 & !D3 & n1
+  # D4 & !D5 & D6 & D7 & !n1
+  # !D4 & D5 & D6 & !D7 & !n1
+
+f =>
+    D5 & D7 & !n1
+  # !D4 & D7 & !n1
+  # D1 & D3 & n1
+  # !D0 & D3 & n1
+  # !D0 & !D1 & !D3 & n1
+  # !D4 & !D5 & !D7 & !n1
+  # !D0 & D1 & D2 & !D3 & n1
+  # D0 & !D1 & D2 & !D3 & n1
+  # !D4 & D5 & D6 & !D7 & !n1
+  # D4 & !D5 & D6 & !D7 & !n1
+  # !D1 & !D2 & D3 & n1
+  # !D5 & !D6 & D7 & !n1
+
+g =>
+    D5 & D7 & !n1
+  # !D4 & D5 & !D6 & !D7 & !n1
+  # D1 & D3 & n1
+  # !D0 & !D1 & D2 & !D3 & n1
+  # D1 & !D2 & !D3 & n1
+  # D4 & D5 & !D6 & !n1
+  # !D4 & !D5 & D6 & !D7 & !n1
+  # D0 & !D1 & D2 & D3 & n1
+  # !D0 & D1 & D2 & !D3 & n1
+  # D0 & !D1 & D2 & !D3 & n1
+  # D4 & !D5 & D6 & D7 & !n1
+  # !D4 & D5 & D6 & !D7 & !n1
+  # D4 & !D5 & D6 & !D7 & !n1
+  # !D1 & !D2 & D3 & n1
+  # !D5 & !D6 & D7 & !n1
+
+n1.d  =>
+    D5 & D7 & !n1
+  # !D4 & !D5 & D6 & D7 & !n1
+  # !D6 & !D7 & !n1
+  # !D4 & !D5 & D6 & !D7 & !n1
+  # D4 & D5 & !D7 & !n1
+  # D4 & !D5 & D6 & D7 & !n1
+  # !D4 & D5 & D6 & !D7 & !n1
+  # D4 & !D5 & D6 & !D7 & !n1
+  # !D5 & !D6 & D7 & !n1
+
+n1.ar  =>
+    0 
+
+n1.sp  =>
+    0 
+
+n2 =>
+    D5 & D7 & !n1
+  # !D4 & !D5 & D6 & D7 & !n1
+  # !D6 & !D7 & !n1
+  # !D4 & !D5 & D6 & !D7 & !n1
+  # D4 & D5 & !D7 & !n1
+  # D4 & !D5 & D6 & D7 & !n1
+  # !D4 & D5 & D6 & !D7 & !n1
+  # D4 & !D5 & D6 & !D7 & !n1
+  # !D5 & !D6 & D7 & !n1
+
+output =>
+    dp , g , f , e , d , c , b , a
+
+a.oe  =>
+    1 
+
+b.oe  =>
+    1 
+
+c.oe  =>
+    1 
+
+d.oe  =>
+    1 
+
+dp.oe  =>
+    1 
+
+e.oe  =>
+    1 
+
+f.oe  =>
+    1 
+
+g.oe  =>
+    1 
+
+n1.oe  =>
+    1 
+
+n2.oe  =>
+    1 
+
+
+===============================================================================
+                                 Symbol Table
+===============================================================================
+
+Pin Variable                                    Pterms   Max     Min    
+Pol   Name              Ext     Pin     Type     Used   Pterms  Level   
+--- --------            ---     ---     ----    ------  ------  -----   
+
+    CLK                         1        V        -       -       -     
+    D0                          2        V        -       -       -     
+    D1                          3        V        -       -       -     
+    D2                          4        V        -       -       -     
+    D3                          5        V        -       -       -     
+    D4                          6        V        -       -       -     
+    D5                          7        V        -       -       -     
+    D6                          8        V        -       -       -     
+    D7                          9        V        -       -       -     
+    a                           14       V        14      8       4     
+    b                           15       V        12      10      4     
+    c                           16       V        16      12      4     
+    d                           17       V        16      14      4     
+    dec0                        0        I        2       -       -     
+    dec1                        0        I        2       -       -     
+    dec2                        0        I        2       -       -     
+    dec3                        0        I        2       -       -     
+    decode                      0        F        -       -       -     
+    dp                          21       V        6       12      4     
+    e                           18       V        10      16      4     
+    f                           19       V        12      16      4     
+    g                           20       V        15      14      4     
+    n1                          22       V        -       -       -     
+    n1                  d       22       X        9       10      4     
+    n1                  ar      22       X        1       1       1     
+    n1                  sp      22       X        1       1       1     
+    n2                          23       V        9       8       4     
+    output                      0        F        -       -       -     
+    a                   oe      14       D        1       1       0     
+    b                   oe      15       D        1       1       0     
+    c                   oe      16       D        1       1       0     
+    d                   oe      17       D        1       1       0     
+    dp                  oe      21       D        1       1       0     
+    e                   oe      18       D        1       1       0     
+    f                   oe      19       D        1       1       0     
+    g                   oe      20       D        1       1       0     
+    n1                  oe      22       D        1       1       0     
+    n2                  oe      23       D        1       1       0     
+
+
+LEGEND    D : default variable         F : field      G : group
+          I : intermediate variable    N : node       M : extended node
+          U : undefined                V : variable   X : extended variable
+          T : function
+
